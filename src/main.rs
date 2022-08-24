@@ -1,5 +1,6 @@
 use std::collections::HashMap;
-use std::io::{self, stdout, Write};
+use std::io;
+use std::io::Write;
 
 fn fizzbuzz_memoisation(n: &u64, map: &mut HashMap<u64, String>) {
     let mut i: u64 = 1;
@@ -63,7 +64,7 @@ fn fizzbuzz_simple(n: &u64) {
 fn main() {
     // Get input from user
     print!("Enter a number: ");
-    let _ = stdout().flush();
+    let _ = io::stdout().flush();
     let mut n = String::new();
     io::stdin().read_line(&mut n).unwrap();
     let n: u64 = n.trim().parse().expect("Expected integer input");
